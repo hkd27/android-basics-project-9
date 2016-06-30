@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
        // Reading all User Activites..
         Log.d("Reading: ", "Reading all User Activites..");
-        List<UserBehaviourPojo> contacts = db.getUserActivites();
+        List<UserBehaviourPojo> contents = db.getUserActivites();
 
-        for (UserBehaviourPojo cn : contacts) {
-            String log = "Id: "+cn.getId()+" ,Name: " + cn.getAction() + " ,Phone: " + cn.getAction();
+        for (UserBehaviourPojo cn : contents) {
+            String log = "Id: "+cn.getId()+" ,Actions: " + cn.getAction() + " ,getTimeOfAction: " + cn.getTimeOfAction();
             // Writing User Activites.. to log
-            Log.d("Name: ", log);
+            Log.d("Activity: ", log);
         }
         db.deleteAllEntries();
         db.deleteDatabase();
